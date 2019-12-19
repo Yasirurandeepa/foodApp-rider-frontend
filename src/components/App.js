@@ -1,23 +1,24 @@
 import React from 'react';
-import { DatePicker, message, Alert } from 'antd';
 import 'antd/dist/antd.css';
-import LoginForm from './Login';
-import RegistrationForm from './Register';
+import { Layout} from 'antd';
+import CustomHeader from "./CustomHeader";
+import CustomFooter from "./CustomFooter";
 
+const { Content} = Layout;
 class App extends React.Component {
-    state = { login_or_register: "login"};
-
-    logreg = (term) => {
-        this.setState({login_or_register: term});
-    }
 
     render() {
-        if (this.state.login_or_register === "login") {
-            return <LoginForm log_reg={this.logreg}></LoginForm>
-        }
-        if (this.state.login_or_register === "register") {
-            return <RegistrationForm log_reg={this.logreg}></RegistrationForm>
-        }
+        return (
+            <Layout className="layout">
+                <CustomHeader />
+                <Content>
+                    <div style={{ background: '#fff', padding: 24, minHeight: 805 }}>
+
+                    </div>
+                </Content>
+                <CustomFooter/>
+            </Layout>
+        )
     }
 }
 

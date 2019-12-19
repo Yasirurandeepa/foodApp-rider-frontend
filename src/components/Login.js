@@ -2,6 +2,12 @@ import React from 'react';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 import '../css/login.css'
 import connection from './backendConnection/connection';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 class LoginForm extends React.Component {
 
@@ -28,8 +34,8 @@ class LoginForm extends React.Component {
   render() {
     const { getFieldDecorator } = this.props.form;
     return (
-      <div className="form-position">
-        <h1 className="company-header">Uber <span className="company-sub-header">Eats</span></h1>
+      <div className="login-form-position">
+        <h1 className="company-header">Asiri <span className="company-sub-header">Foods</span></h1>
         <Form onSubmit={this.handleSubmit} className="login-form">
           <Form.Item>
             {getFieldDecorator('username', {
@@ -63,7 +69,7 @@ class LoginForm extends React.Component {
             <Button type="primary" htmlType="submit" className="login-form-button">
               Log in
           </Button>
-            Or <a href="" onClick={this.loadRegisterComponent}>Register Now!</a>
+            Or <a><Link to="/register">Register Now!</Link></a>
           </Form.Item>
         </Form>
       </div>
