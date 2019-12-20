@@ -3,6 +3,7 @@ import 'antd/dist/antd.css';
 import { Layout} from 'antd';
 import CustomHeader from "./CustomHeader";
 import CustomFooter from "./CustomFooter";
+import Home from "./Home";
 
 const { Content} = Layout;
 class App extends React.Component {
@@ -11,11 +12,6 @@ class App extends React.Component {
         return (
             <Layout className="layout">
                 <CustomHeader />
-                <Content>
-                    <div style={{ background: '#fff', padding: 24, minHeight: 805 }}>
-
-                    </div>
-                </Content>
                 <CustomFooter/>
             </Layout>
         )

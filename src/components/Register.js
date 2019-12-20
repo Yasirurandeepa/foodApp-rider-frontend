@@ -29,6 +29,7 @@ class RegistrationForm extends React.Component {
         e.preventDefault();
         this.props.form.validateFieldsAndScroll((err, values) => {
             if (!err) {
+                values["status"] = "available";
                 console.log('Received values of form: ', values);
                 // connection.post('users', values).then((response) => {
                 //     console.log(response);
@@ -45,7 +46,7 @@ class RegistrationForm extends React.Component {
                         "Access-Control-Allow-Origin": "*"
                     }
                 }).then(
-                    success => console.log(success),
+                    success => alert("Successfully Registered!!!"),
                     error => console.log(error)
                 )
             }
